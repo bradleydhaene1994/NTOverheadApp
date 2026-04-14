@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37111.16 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTOverheadApp.Api", "NTOverheadApp\NTOverheadApp.Api.csproj", "{34B0D7A0-803B-4D9E-9027-CA781D7CFF98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTOverheadApp.Api", "NTOverheadApp\NTOverheadApp.Api.csproj", "{6FDD0C89-9458-4670-B2A6-6360BA79120F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NTOverheadApp.Domain.Model", "NTOverheadApp.Domain.Model", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		Language.cs = Language.cs
-		Patient.cs = Patient.cs
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTOverheadApp.Domain.Model", "NTOverheadApp.Domain.Model\NTOverheadApp.Domain.Model.csproj", "{B2793646-AC1D-4438-B083-0AECDCC2A52C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34B0D7A0-803B-4D9E-9027-CA781D7CFF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34B0D7A0-803B-4D9E-9027-CA781D7CFF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34B0D7A0-803B-4D9E-9027-CA781D7CFF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34B0D7A0-803B-4D9E-9027-CA781D7CFF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FDD0C89-9458-4670-B2A6-6360BA79120F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FDD0C89-9458-4670-B2A6-6360BA79120F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FDD0C89-9458-4670-B2A6-6360BA79120F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FDD0C89-9458-4670-B2A6-6360BA79120F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2793646-AC1D-4438-B083-0AECDCC2A52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2793646-AC1D-4438-B083-0AECDCC2A52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2793646-AC1D-4438-B083-0AECDCC2A52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2793646-AC1D-4438-B083-0AECDCC2A52C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {41AEE479-485F-42DF-ADCA-FBACADE5FEB8}
+		SolutionGuid = {A37FC76F-297F-4A91-AEF3-AAD0930CBD65}
 	EndGlobalSection
 EndGlobal

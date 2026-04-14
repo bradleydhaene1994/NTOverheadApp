@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NTOverheadApp.Domain.Model\NTOverheadApp.Domain.Model.csproj" />
+  </ItemGroup>
+
 </Project>
