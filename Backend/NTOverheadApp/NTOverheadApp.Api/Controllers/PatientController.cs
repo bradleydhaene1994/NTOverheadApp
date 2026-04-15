@@ -7,6 +7,7 @@ namespace NTOverheadApp.Api.Controllers
     [Route("api/patients")]
     public class PatientController : ControllerBase
     {
+        [HttpGet]
         public IActionResult GetPatient()
         {
             var patient = new Patient
