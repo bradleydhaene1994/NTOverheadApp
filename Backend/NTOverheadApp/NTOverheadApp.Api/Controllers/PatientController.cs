@@ -15,7 +15,6 @@ namespace NTOverheadApp.Api.Controllers
                 Id = 1,
                 FirstName = "Test",
                 LastName = "Test",
-                LastPlayedLevel = 1,
                 Language = Language.nl
             };
 
