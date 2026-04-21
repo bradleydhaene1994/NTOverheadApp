@@ -20,7 +20,9 @@ const games = [
     name: "Spot the Difference",
     port: 58888,
     levelKey: "levelSpotTheDifference",
-    extraParams: (p: Patient) => `&difficultyId=${p.difficultyId}`,
+    hasDifficulty: true,
+    extraParams: (p: Patient, selectedDiff?: number) =>
+      `&difficultyId=${selectedDiff || p.difficultyId}`,
   },
   {
     id: 2,
@@ -62,6 +64,10 @@ const games = [
 function App() {
   const [patient, setPatient] = useState<Patient | null>(null);
 
+  const [selectedDiffs, setSelectedDiffs] = useState<Record<number, number>>(
+    {},
+  );
+
   useEffect(() => {
     fetch("http://localhost:5104/api/patients")
       .then((res) => res.json())
@@ -94,6 +100,8 @@ function App() {
       >
         {games.map((game) => {
           const specificLevel = (patient as any)[game.levelKey] || 1;
+          const currentDifficulty =
+            selectedDiffs[game.id] || patient.difficultyId;
           return (
             <div
               key={game.id}
@@ -113,12 +121,50 @@ function App() {
                 <p style={{ color: "#666", fontSize: "0.9rem" }}>
                   Current Level: <strong>{specificLevel}</strong>
                 </p>
+                {game.hasDifficulty && (
+                  <div style={{ marginBottom: "15px" }}>
+                    <label
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "#444",
+                        fontWeight: "bold",
+                        display: "block",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      Select Difficulty:
+                    </label>
+                    <select
+                      value={currentDifficulty}
+                      onChange={(e) =>
+                        setSelectedDiffs({
+                          ...selectedDiffs,
+                          [game.id]: Number(e.target.value),
+                        })
+                      }
+                      style={{
+                        width: "100%",
+                        padding: "8px",
+                        borderRadius: "6px",
+                        border: "1px solid #ccc",
+                        fontSize: "0.95rem",
+                      }}
+                    >
+                      <option value={1}>Easy</option>
+                      <option value={2}>Medium</option>
+                      <option value={3}>Hard</option>
+                      <option value={4}>Insane</option>
+                      <option value={5}>Impossible</option>
+                    </select>
+                  </div>
+                )}
               </div>
+
               <button
                 onClick={() => {
                   let url = `http://localhost:${game.port}?id=${patient.id}&level=${specificLevel}&lang=${patient.Language}`;
                   if (game.extraParams) {
-                    url += game.extraParams(patient);
+                    url += game.extraParams(patient, currentDifficulty);
                   }
                   window.open(url, "_blank");
                 }}
